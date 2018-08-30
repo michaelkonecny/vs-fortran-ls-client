@@ -1,0 +1,17 @@
+.vs
+bin/
+obj/
+packages/
+
+# Visual Studio files
+ipch
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.suo
+*.u2d
+*.bak
+*.aps
+*.user
+*.TMP

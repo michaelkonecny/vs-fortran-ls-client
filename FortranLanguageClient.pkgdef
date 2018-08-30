@@ -1,0 +1,5 @@
+﻿[$RootKey$\OpenFolder\Settings\VSWorkspaceSettings\FortranLanguageClient]
+@="$PackageFolder$\FortranLanguageClientSettings.json"
+
+[$RootKey$\TextMate\Repositories]
+"Fortran"="$PackageFolder$\Grammars"
