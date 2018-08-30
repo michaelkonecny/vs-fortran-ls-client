@@ -12,9 +12,10 @@ pip install fortran-language-server
 ```
 
 #### Install the VS extension
-Download the VSIX file from releases and install it to your Visual Studio.
+Download the extensions from Visual Studio Marketplace:
+----- link ---- 
 
-Configure the path to Fortran Lanauge Server.
+Configure the path to Fortran Language Server.
 
 TODO: this is yet to be added, path to server is now hardcoded.
 
