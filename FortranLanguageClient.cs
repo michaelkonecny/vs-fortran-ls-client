@@ -26,7 +26,8 @@ namespace FortranLanguageClient
 {
     [ContentType("fortran")]
     [Export(typeof(ILanguageClient))]
-    public class FortranLanguageClient : ILanguageClient //, ILanguageClientCustomMessage
+    [ProvideOptionPage(typeof(DialogPageProvider.General), "Fortran Language Client", "General", 0, 0, true)]
+    public class FortranLanguageClient : AsyncPackage, ILanguageClient //, ILanguageClientCustomMessage
     {
         public string Name => "Fortran IntelliSense";
 
@@ -50,16 +51,22 @@ namespace FortranLanguageClient
             }
         }
 
-        /**
-         * 
-         */
         public async Task<Connection> ActivateAsync(CancellationToken token)
         {
 
+            var options = GeneralOptions.Instance;
+            var programPath = options.FortlsPath;
+
+            var arguments = "";
+            if (options.TypeMemberSymbols == false) arguments += "--symbol_skip_mem ";
+            if (options.FilterAutocomplete == false) arguments += "--autocomplete_no_prefix ";
+            if (options.LowercaseIntrinsics == true) arguments += "--lowercase_intrinsics ";
+            if (options.IncrementalSync == true) arguments += "--incremental_sync ";
+            if (options.VariableHover == true) arguments += "--variable_hover ";
+            if (options.SignatureHelp == true) arguments += "--use_signature_help ";
+
             ProcessStartInfo info = new ProcessStartInfo();
-            //var programPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Server", @"LanguageServerWithUI.exe");
-            var programPath = "c:\\Python27\\Scripts\\fortls.exe";
-            info.Arguments = "--lowercase_intrinsics --variable_hover --use_signature_help";
+            info.Arguments = arguments;
             info.FileName = programPath;
             info.WorkingDirectory = Path.GetDirectoryName(programPath);
             info.RedirectStandardInput = true;

@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="FortranLanguageClient" Version="1.0" Language="en-US" Publisher="Michael Konečný" />
+        <Identity Id="FortranLanguageClient" Version="0.1" Language="en-US" Publisher="Michael Konečný" />
         <DisplayName>Fortran IntelliSense</DisplayName>
         <Description xml:space="preserve">Adds IntelliSense for fortran using Chris Hansen's Fortran Language Server
  (https://github.com/hansec/fortran-language-server).
 </Description>
+        <MoreInfo>https://github.com/michaelkonecny/vs-fortran-ls-client</MoreInfo>
+        <License>LICENSE</License>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
