@@ -28,7 +28,7 @@
     <RootNamespace>FortranLanguageExtension</RootNamespace>
     <AssemblyName>Fortran IntelliSense</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
     <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
@@ -63,12 +63,17 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="FortranLanguageClientSettings.json" />
-    <Content Include="Grammars\fortran.tmLanguage">
+    <Content Include="Grammars\FortranFixedForm.tmLanguage">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Grammars\modern.tmLanguage">
+    <Content Include="Grammars\FortranFreeForm.tmLanguage">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Grammars\FortranModern.tmLanguage">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="Grammars\FortranPreprocessor.tmLanguage" />
+    <None Include="Grammars\FortranPunchcard.tmLanguage" />
     <None Include="packages.config" />
     <None Include="README.md" />
     <None Include="source.extension.vsixmanifest">

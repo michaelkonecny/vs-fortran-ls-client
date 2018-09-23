@@ -15,6 +15,13 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
+
+/**
+ * Grammar files were taken from https://github.com/dparkins/language-fortran,
+ * converted from cson to json,
+ * then converted to tmLanguage using vscode TextMate Languages extension (https://marketplace.visualstudio.com/items?itemName=Togusa09.tmlanguage).
+ * 
+ */
 namespace FortranLanguageClient
 {
     [ContentType("fortran")]
@@ -39,7 +46,7 @@ namespace FortranLanguageClient
         {
             get
             {
-                yield return "fortran";
+                yield return "fortranLanguageClient";
             }
         }
 
@@ -52,6 +59,7 @@ namespace FortranLanguageClient
             ProcessStartInfo info = new ProcessStartInfo();
             //var programPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Server", @"LanguageServerWithUI.exe");
             var programPath = "c:\\Python27\\Scripts\\fortls.exe";
+            info.Arguments = "--lowercase_intrinsics --variable_hover --use_signature_help";
             info.FileName = programPath;
             info.WorkingDirectory = Path.GetDirectoryName(programPath);
             info.RedirectStandardInput = true;
