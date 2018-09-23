@@ -16,7 +16,7 @@ pip install fortran-language-server
 ```
 
 2. Clone or fork this repo
-3. Change `programPath` to point to your fortls.exe.
+3. Change `programPath` in FortranLanguageClient.cs to point to your fortls.exe.
 4. Build
 5. Install the VSIX
 
